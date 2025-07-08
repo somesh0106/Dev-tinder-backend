@@ -80,7 +80,7 @@ Auth.post("/Signup", async (req,res)=>{
         
         
         
-Auth.get("/feed", async (req, res) => {
+Auth.get("/feed", userAuth , async (req, res) => {
             try {
                 const names = await User.find({});
                 if (names.length === 0) {
